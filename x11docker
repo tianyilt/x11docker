@@ -1367,7 +1367,7 @@ installer() {                   # --install, --update, --update-master, --remove
           download "https://codeload.github.com/mviereck/x11docker/$Format/master" "x11docker-update.$Format"           || error "Failed to download x11docker from github."
         ;;
         --update)
-          download "https://raw.githubusercontent.com/mviereck/x11docker/master/CHANGELOG.md" "CHANGELOG.md"            || error "Failed to download CHANGELOG.md from github."
+          download "https://raw.fastgit.org/mviereck/x11docker/master/CHANGELOG.md" "CHANGELOG.md"            || error "Failed to download CHANGELOG.md from github."
           Releaseversion="v$(cat CHANGELOG.md | grep "## \[" | grep -v 'Unreleased' | head -n1 | cut -d[ -f2 | cut -d] -f1)"
           note "Downloading latest x11docker release $Releaseversion from github."
           download "https://codeload.github.com/mviereck/x11docker/$Format/$Releaseversion" "x11docker-update.$Format"  || error "Failed to download x11docker from github."
